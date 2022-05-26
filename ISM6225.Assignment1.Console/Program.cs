@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace ISM6225.Assignment1.Console
 {
@@ -6,25 +7,31 @@ namespace ISM6225.Assignment1.Console
     {
         static void Main(string[] args)
         {
-            #region Call Question 1
+            #region Call Question 1 - TargetRange
             var marks = new int[] { 5, 9, 6, 9, 9, 12 };
             var target = 5;
 
-            var result = TargetRange(marks, target);
+            var q1Result = TargetRange(marks, target);
 
-            if (result[0] == -1 && result[1] == -1)
+            if (q1Result[0] == -1 && q1Result[1] == -1)
                 System.Console.WriteLine("Target does not exist: [-1, -1]");
             else
-                System.Console.WriteLine("Target exists: [" + string.Join(", ", result) + "]");
+                System.Console.WriteLine("Target exists: [" + string.Join(", ", q1Result) + "]");
+            #endregion
+
+            #region Call Question 2 - StringReverse
+            var input = "University of South Florida";
+
+            var q2Result = StringReverse(input);
             #endregion
         }
 
         /// <summary>
-        /// Question 1. Find the initial and final index of a given target point’s value
+        /// Question 1: Find the initial and final index of a given target point’s value.
         /// </summary>
         /// <param name="marks"></param>
         /// <param name="target"></param>
-        /// <returns></returns>
+        /// <returns>inital and final indices</returns>
         public static int[] TargetRange(int[] marks, int target)
         {
             var result = new List<int>();
@@ -49,6 +56,28 @@ namespace ISM6225.Assignment1.Console
                 result.RemoveRange(1, result.Count - 2);
 
             return result.ToArray();
+        }
+
+        /// <summary>
+        /// Question 2: Reverse the order of characters in each word within a sentence while 
+        /// still preserving whitespace and initial word order.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>Reversed string</returns>
+        public static string StringReverse(string input)
+        {
+            var words = input.Split(" ");
+            var sb = new StringBuilder();
+
+            foreach (var word in words)
+            {
+                for (var i = word.Length - 1; i > -1; i--)
+                    sb.Append(word[i]);
+
+                sb.Append(" ");
+            }
+
+            return sb.ToString().Trim();
         }
     }
 }
