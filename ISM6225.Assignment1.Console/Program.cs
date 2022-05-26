@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ISM6225.Assignment1.Console
@@ -13,6 +14,7 @@ namespace ISM6225.Assignment1.Console
 
             var q1Result = TargetRange(marks, target);
 
+            System.Console.WriteLine("Question 1:");
             if (q1Result[0] == -1 && q1Result[1] == -1)
                 System.Console.WriteLine("Target does not exist: [-1, -1]");
             else
@@ -20,9 +22,21 @@ namespace ISM6225.Assignment1.Console
             #endregion
 
             #region Call Question 2 - StringReverse
-            var input = "University of South Florida";
+            var q2Input = "University of South Florida";
 
-            var q2Result = StringReverse(input);
+            var q2Result = StringReverse(q2Input);
+
+            System.Console.WriteLine("Question 2:");
+            System.Console.WriteLine(q2Result);
+            #endregion
+
+            #region Call Question 3 - MinSum
+            var q3Input = new int[] { 2, 2, 3, 5, 6 };
+
+            var q3Result = MinSum(q3Input);
+
+            System.Console.WriteLine("Question 3:");
+            System.Console.WriteLine(q3Result);
             #endregion
         }
 
@@ -78,6 +92,26 @@ namespace ISM6225.Assignment1.Console
             }
 
             return sb.ToString().Trim();
+        }
+
+        /// <summary>
+        /// Question 3: Makes the array elements distinct by increasing each value as needed, 
+        /// while minimizing the array sum.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static int MinSum(int[] input)
+        {
+            for (var i = 0; i < input.Length; i++)
+            {
+                for (var a = i + 1; a < input.Length; a++)
+                {
+                    if (input[i] == input[a])
+                        input[a] += 1;
+                }
+            }
+
+            return input.Sum();
         }
     }
 }
