@@ -31,6 +31,7 @@ namespace ISM6225.Assignment1.Console
             var q2Result = StringReverse(q2Input);
 
             System.Console.WriteLine("Question 2:");
+            System.Console.WriteLine("University of South Florida");
             System.Console.WriteLine(q2Result);
             #endregion
 
@@ -49,6 +50,7 @@ namespace ISM6225.Assignment1.Console
             var q4Result = FreqSort(q4Input);
 
             System.Console.WriteLine("Question 4:");
+            System.Console.WriteLine(q4Input);
             System.Console.WriteLine(q4Result);
             #endregion
 
@@ -59,6 +61,8 @@ namespace ISM6225.Assignment1.Console
             var q5Result = Intersect1(nums1, nums2);
 
             System.Console.WriteLine("Question 5:");
+            System.Console.WriteLine("Array 1 - " + string.Join(", ", nums1));
+            System.Console.WriteLine("Array 2 - " + string.Join(", ", nums2));
             System.Console.WriteLine(q5Result);
             #endregion
 
@@ -69,6 +73,8 @@ namespace ISM6225.Assignment1.Console
             var q6Result = ContainsDuplicate(arr, k);
 
             System.Console.WriteLine("Question 6:");
+            /// Christopher Tate
+            System.Console.WriteLine("Array - " + string.Join(", ", arr));
             System.Console.WriteLine(q6Result);
             #endregion
         }
