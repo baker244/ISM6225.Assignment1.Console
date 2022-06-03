@@ -38,6 +38,35 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Question 3:");
             System.Console.WriteLine(q3Result);
             #endregion
+
+            #region Call Question 4 - FreqSort
+            var q4Input = "Dell";
+
+            var q4Result = FreqSort(q4Input);
+
+            System.Console.WriteLine("Question 4:");
+            System.Console.WriteLine(q4Result);
+            #endregion
+
+            #region Call Question 5 - Intersect1
+            var nums1 = new int[] { 3, 6, 2 };
+            var nums2 = new int[] { 6, 3, 6, 7, 3 };
+
+            var q5Result = Intersect1(nums1, nums2);
+
+            System.Console.WriteLine("Question 5:");
+            System.Console.WriteLine(q5Result);
+            #endregion
+
+            #region Call Question 6 - ContainsDuplicate
+            var arr = new char[] { 'a', 'g', 'h', 'a' };
+            var k = 2;
+
+            var q6Result = ContainsDuplicate(arr, k);
+
+            System.Console.WriteLine("Question 6:");
+            System.Console.WriteLine(q6Result);
+            #endregion
         }
 
         /// <summary>
@@ -112,6 +141,74 @@ namespace ISM6225.Assignment1.Console
             }
 
             return input.Sum();
+        }
+
+        /// <summary>
+        /// Question 4: Sort the given string in decreasing order of frequency of occurence of each character.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string FreqSort(string s)
+        {
+            var dictionary = new Dictionary<char, int>();
+            var sb = new StringBuilder();
+            
+            foreach (var character in s)
+            {
+                if (dictionary.ContainsKey(character))
+                    dictionary[character]++;
+                else
+                    dictionary.Add(character, 1);
+            }
+
+            foreach (var item in dictionary.OrderByDescending(key => key.Value))
+            {
+                var i = 0;
+                
+                while (i < item.Value)
+                {
+                    sb.Append(item.Key);
+                    i++;
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Question 5. Computes the intersection of two sets. 
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        public static int[] Intersect1(int[] nums1, int[] nums2)
+        {
+            var intersects = new List<int>();
+
+            foreach (var num1 in nums1)
+            {
+                foreach (var num2 in nums2)
+                {
+                    if (num1 == num2)
+                    {
+                        intersects.Add(num1);
+                        break;
+                    }
+                }
+            }
+
+            return intersects.ToArray();
+        }
+
+        /// <summary>
+        /// Question 6.
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static bool ContainsDuplicate(char[] arr, int k)
+        {
+            return false;
         }
     }
 }
