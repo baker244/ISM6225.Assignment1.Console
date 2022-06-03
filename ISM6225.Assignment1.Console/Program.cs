@@ -63,7 +63,7 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Question 5:");
             System.Console.WriteLine("Array 1 - " + string.Join(", ", nums1));
             System.Console.WriteLine("Array 2 - " + string.Join(", ", nums2));
-            System.Console.WriteLine(q5Result);
+            System.Console.WriteLine("[" + string.Join(", ", q5Result) + "]");
             #endregion
 
             #region Call Question 6 - ContainsDuplicate
