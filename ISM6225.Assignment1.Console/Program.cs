@@ -59,7 +59,7 @@ namespace ISM6225.Assignment1.Console
             #endregion
 
             #region Call Question 6 - ContainsDuplicate
-            var arr = new char[] { 'a', 'g', 'h', 'a' };
+            var arr = new char[] { 'a', 'b', 'c', 'a', 'b', 'c' };
             var k = 2;
 
             var q6Result = ContainsDuplicate(arr, k);
@@ -201,14 +201,30 @@ namespace ISM6225.Assignment1.Console
         }
 
         /// <summary>
-        /// Question 6.
+        /// Question 6. A an array of characters and an integer k, and are required to find out whether 
+        /// there are two distinct indices i and j in the array such that arr[i]=arr[j] and the absolute
+        /// difference between i and j is at most k.
         /// </summary>
         /// <param name="arr"></param>
         /// <param name="k"></param>
         /// <returns></returns>
         public static bool ContainsDuplicate(char[] arr, int k)
         {
-            return false;
+            var text = new string(arr);
+            var condition = false;
+
+            foreach (var letter in arr)
+            {
+                var last = text.LastIndexOf(letter);
+                var first = text.IndexOf(letter);
+
+                if ((last - first) <= k)
+                {
+                    condition = true;
+                }
+            }
+
+            return condition;
         }
     }
 }
