@@ -12,6 +12,8 @@ namespace ISM6225.Assignment1.Console
             var marks = new int[] { 5, 9, 6, 9, 9, 12 };
             var target = 5;
 
+            /// Christopher Tate - If we want User Input
+            /// target = Convert.ToInt32(Console.ReadLine());
             var q1Result = TargetRange(marks, target);
 
             System.Console.WriteLine("Question 1:");
@@ -23,6 +25,8 @@ namespace ISM6225.Assignment1.Console
 
             #region Call Question 2 - StringReverse
             var q2Input = "University of South Florida";
+            /// Christopher Tate - If we want to reverse User Input
+            /// q2Input = Console.ReadLine();
 
             var q2Result = StringReverse(q2Input);
 
