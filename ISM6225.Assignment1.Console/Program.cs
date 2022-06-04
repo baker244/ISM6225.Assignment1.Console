@@ -17,6 +17,8 @@ namespace ISM6225.Assignment1.Console
             var q1Result = TargetRange(marks, target);
 
             System.Console.WriteLine("Question 1:");
+            System.Console.WriteLine("Marks: [" + string.Join(", ", marks) + "]");
+            System.Console.WriteLine("Target: " + target); 
             if (q1Result[0] == -1 && q1Result[1] == -1)
                 System.Console.WriteLine("Target does not exist: [-1, -1]");
             else
@@ -31,8 +33,8 @@ namespace ISM6225.Assignment1.Console
             var q2Result = StringReverse(q2Input);
 
             System.Console.WriteLine("Question 2:");
-            System.Console.WriteLine("University of South Florida");
-            System.Console.WriteLine(q2Result);
+            System.Console.WriteLine("Input: University of South Florida");
+            System.Console.WriteLine("Result: " + q2Result);
             #endregion
 
             #region Call Question 3 - MinSum
@@ -41,7 +43,8 @@ namespace ISM6225.Assignment1.Console
             var q3Result = MinSum(q3Input);
 
             System.Console.WriteLine("Question 3:");
-            System.Console.WriteLine(q3Result);
+            System.Console.WriteLine("Input: [" + string.Join(", ", marks) + "]");
+            System.Console.WriteLine("Result: " + q3Result);
             #endregion
 
             #region Call Question 4 - FreqSort
@@ -50,8 +53,8 @@ namespace ISM6225.Assignment1.Console
             var q4Result = FreqSort(q4Input);
 
             System.Console.WriteLine("Question 4:");
-            System.Console.WriteLine(q4Input);
-            System.Console.WriteLine(q4Result);
+            System.Console.WriteLine("Input: " + q4Input);
+            System.Console.WriteLine("Result: " + q4Result);
             #endregion
 
             #region Call Question 5 - Intersect1
