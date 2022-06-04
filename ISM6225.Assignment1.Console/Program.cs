@@ -8,6 +8,9 @@ namespace ISM6225.Assignment1.Console
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("Assignment 1 - Caleb, Chris, Trenton, Raquel");
+            System.Console.WriteLine("");
+
             #region Call Question 1 - TargetRange
             var marks = new int[] { 5, 9, 6, 9, 9, 12 };
             var target = 5;
@@ -25,6 +28,8 @@ namespace ISM6225.Assignment1.Console
                 System.Console.WriteLine("Target exists: [" + string.Join(", ", q1Result) + "]");
             #endregion
 
+            System.Console.WriteLine("");
+
             #region Call Question 2 - StringReverse
             var q2Input = "University of South Florida";
             /// Christopher Tate - If we want to reverse User Input
@@ -37,6 +42,8 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Result: " + q2Result);
             #endregion
 
+            System.Console.WriteLine("");
+
             #region Call Question 3 - MinSum
             var q3Input = new int[] { 2, 2, 3, 5, 6 };
 
@@ -47,6 +54,8 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Result: " + q3Result);
             #endregion
 
+            System.Console.WriteLine("");
+
             #region Call Question 4 - FreqSort
             var q4Input = "Dell";
 
@@ -56,6 +65,8 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Input: " + q4Input);
             System.Console.WriteLine("Result: " + q4Result);
             #endregion
+
+            System.Console.WriteLine("");
 
             #region Call Question 5 - Intersect1
             var nums1 = new int[] { 3, 6, 2 };
@@ -68,6 +79,8 @@ namespace ISM6225.Assignment1.Console
             System.Console.WriteLine("Array 2 - " + string.Join(", ", nums2));
             System.Console.WriteLine("[" + string.Join(", ", q5Result) + "]");
             #endregion
+
+            System.Console.WriteLine("");
 
             #region Call Question 6 - ContainsDuplicate
             var arr = new char[] { 'a', 'b', 'c', 'a', 'b', 'c' };
@@ -90,6 +103,17 @@ namespace ISM6225.Assignment1.Console
         /// <returns>inital and final indices</returns>
         public static int[] TargetRange(int[] marks, int target)
         {
+            // Christopher Tate - Alt Code
+            //int i;
+            //for (i = 0; i < arr.Length; i++)
+            //{
+            //    if (arr[i] == n)
+            //    {
+            //        return i;
+            //    }
+            //}
+            //return -1;
+
             var result = new List<int>();
 
             for (var i = 0; i < marks.Length; i++)
@@ -122,6 +146,15 @@ namespace ISM6225.Assignment1.Console
         /// <returns>Reversed string</returns>
         public static string StringReverse(string input)
         {
+            // Christopher Tate - Alt Code
+            //char[] cArray = s.ToCharArray();
+            //string reverse = String.Empty;
+            //for (int i = cArray.Length - 1; i > -1; i--)
+            //{
+            //    reverse += cArray[i];
+            //}
+            //return reverse;
+
             var words = input.Split(" "); //Trenton Scribe/learning Comments - splitting the phrase into an array with every word being a index position
             var sb = new StringBuilder();
 
@@ -173,7 +206,7 @@ namespace ISM6225.Assignment1.Console
                 else
                     dictionary.Add(character, 1);
             }
-
+            //Christopher Tate - ReFactor/we could nest the loop below in the above loop.
             foreach (var item in dictionary.OrderByDescending(key => key.Value))
             {
                 var i = 0;
@@ -197,7 +230,7 @@ namespace ISM6225.Assignment1.Console
         public static int[] Intersect1(int[] nums1, int[] nums2)
         {
             var intersects = new List<int>();
-
+            //Christopher Tate - had same logic in my version
             foreach (var num1 in nums1) //Trenton Scribe/learning comments - looking at each specific int in an array one at atime
             {
                 foreach (var num2 in nums2) //Looking at each specific int in an array at one time at the same time as it is being done in nums1 array
