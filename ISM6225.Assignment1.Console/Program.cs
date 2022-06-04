@@ -122,18 +122,18 @@ namespace ISM6225.Assignment1.Console
         /// <returns>Reversed string</returns>
         public static string StringReverse(string input)
         {
-            var words = input.Split(" ");
+            var words = input.Split(" "); //Trenton Scribe/learning Comments - splitting the phrase into an array with every word being a index position
             var sb = new StringBuilder();
 
-            foreach (var word in words)
+            foreach (var word in words) //storing each value in an index position as a word; words itself is the array
             {
-                for (var i = word.Length - 1; i > -1; i--)
-                    sb.Append(word[i]);
+                for (var i = word.Length - 1; i > -1; i--) //First sequence stores word as an array of chars since arrays always start with 0 instead of 1, the -1 is added to the length; second sequence tells the code block to stop executing once the loop gets to index position 0 (for example, the letter "U" for "University"; The third sequence iterates in reverse on every char of a word
+                    sb.Append(word[i]); //after the index 0 char is ran through the code block the word is added to the stringbuilder
 
-                sb.Append(" ");
+                sb.Append(" "); //a space is added to the string builder after each word every time the word is ran through the for loop
             }
 
-            return sb.ToString().Trim();
+            return sb.ToString().Trim(); //after each word is passed through the foreach loop, the results are added to a string. The ".Trim()" isn't necessary but it's best practice in case there are any leading white spaces
         }
 
         /// <summary>
@@ -144,11 +144,11 @@ namespace ISM6225.Assignment1.Console
         /// <returns></returns>
         public static int MinSum(int[] input)
         {
-            for (var i = 0; i < input.Length; i++)
+            for (var i = 0; i < input.Length; i++) //Trenton Scribe/learning Comments - basic for loop statement that increments at position 0, stops the loop once the iteration has executed on the last index position
             {
-                for (var a = i + 1; a < input.Length; a++)
+                for (var a = i + 1; a < input.Length; a++) //a loop within the above loop statement that says if another value in the array equals i+1 then the if statement should be executed 
                 {
-                    if (input[i] == input[a])
+                    if (input[i] == input[a])//if two values in the array equal each other, the one on the right will have 1 added to it
                         input[a] += 1;
                 }
             }
@@ -198,19 +198,19 @@ namespace ISM6225.Assignment1.Console
         {
             var intersects = new List<int>();
 
-            foreach (var num1 in nums1)
+            foreach (var num1 in nums1) //Trenton Scribe/learning comments - looking at each specific int in an array one at atime
             {
-                foreach (var num2 in nums2)
+                foreach (var num2 in nums2) //Looking at each specific int in an array at one time at the same time as it is being done in nums1 array
                 {
-                    if (num1 == num2)
+                    if (num1 == num2) //if a specific int in the nums1 array is equal to a specific int in nums2 array, execute the below code block
                     {
-                        intersects.Add(num1);
-                        break;
+                        intersects.Add(num1); //adds the matching value between the two arrays to the intersects list
+                        break; //break used instead of ++ or -- because when comparing arrays of two sizes you need to iterate to the end of the longest one
                     }
                 }
             }
 
-            return intersects.ToArray();
+            return intersects.ToArray(); 
         }
 
         /// <summary>
